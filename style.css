@@ -283,6 +283,7 @@ section a {
   border: none;
   z-index: 10;
   transition: all 0.25s;
+  display: none;
 }
 
 .hamburger-top,
@@ -306,6 +307,18 @@ section a {
   transform: translateY(14px);
 }
 
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-mid {
+  display: none;
+}
+
+.open .hamburger-bot {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
 /* Media Query */
 
 @media (max-width: 960px) {
@@ -323,6 +336,10 @@ section a {
 }
 
 @media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
   .grid-col-2 {
     grid-template-columns: 1fr;
   }
